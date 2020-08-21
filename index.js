@@ -11,8 +11,8 @@ const s3Folder = process.env.AWS_S3_FOLDER;
 const runscriptKey = process.env.RUNSCRIPT_KEY;
 const runscriptSecret = process.env.RUNSCRIPT_SECRET;
 
-var inputFile = 'FD001_Business_Cards-1.idml';
-var outputFile = 'FD001_Business_Cards-1.pdf';
+var inputFile = 'test.idml';
+var outputFile = 'test.pdf';
 var presetFile = 'DUKE Bleed.joboptions';
 var presetPath = 'c:/Program Files/Adobe/Adobe InDesign CC Server 2019/Resources/Adobe PDF/settings/mul/DUKE Bleed.joboptions';
 var s3KeyIndd = s3Folder + '/' + inputFile;
@@ -27,28 +27,11 @@ runscript = async function(){
 
     // Arguments
     let args = [
-      { name: 'First Name', value: 'Joe' },
-      { name: 'Last Name', value: 'Bloggs' },
-      { name: 'Qualification', value: 'Snr' },
-      { name: 'Title', value: 'Engineer' },
-      { name: 'ARN No.', value: 'AA 07 07 16 000000 1' },
-      { name: 'Direct Phone', value: '+61 7 3444 4444' },
-      { name: 'Phone', value: '+61 7 3444 4443' },
-      { name: 'Email', value: 'jbloggs@fake.com' },
-      { name: 'Fax', value: '+61 7 3444 4442' },
-      { name: 'Address Line 1', value: '63 Fake St' },
-      { name: 'Line 2', value: 'Unit 1' },
-      { name: 'City', value: 'Maroocydore' },
-      { name: 'State', value: 'QLD' },
-      { name: 'Postcode', value: '4558' },
-      { name: 'Post Box Address', value: 'PO Box 1033' },
-      { name: 'Corporate', value: 'Faker' },
-      { name: 'input', value: 'FD001_Business_Cards-1.idml'},
-      { name: 'output', value: 'FD001_Business_Cards-1.pdf'},
+      { name: 'input', value: inputFile},
+      { name: 'output', value: outputFile},
       { name: 'preset_filename', value: presetPath},
-      { name: 'preset_name', value: 'DUKE Bleed'},
-      
-  ]
+      { name: 'preset_name', value: 'DUKE Bleed'},      
+    ]
   
     // Input files
     var inputFile1 = {};
